@@ -11,6 +11,7 @@ const str = ref('learn vue')
 
 <style scoped>
 h1{
+  
   user-select: none;
 }
 </style>
