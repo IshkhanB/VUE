@@ -2,7 +2,7 @@
   <h1 @click="str += '!'">{{ str }}</h1>
   <p v-bind="ref">hekk</p>
   <ToDoList />
-  <!-- <HelloWorld></HelloWorld> -->
+  <HelloWorld msg="dsfsdfsdf"></HelloWorld>
   <div v-html="html"></div>
   <div>{{ html }}</div>
   <form @submit.prevent="add">
@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import ToDoList from "./components/ToDoList.vue";
-// import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from './components/HelloWorld.vue';
 import { ref } from "vue";
 const str = ref("learn vue");
 const html = ` <h1>Html code</h1>`;
