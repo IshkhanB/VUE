@@ -2,6 +2,8 @@
 <button @click="count++">Нажимай каждый год <span class="count">{{ count }}</span></button>
 <button @click="count = 0">Сброс</button>
 <br>
+<br>
+<br>
 <div class="cont">
 
   <div>
