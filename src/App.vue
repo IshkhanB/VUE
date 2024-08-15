@@ -2,7 +2,8 @@
   <h1 @click="str += '!'">{{ str }}</h1>
   <p v-bind="ref">hekk</p>
   <ToDoList />
-  <HelloWorld msg="dsfsdfsdf"></HelloWorld>
+  <NewFile />
+  <!-- <HelloWorld msg="dsfsdfsdf"></HelloWorld> -->
   <div v-html="html"></div>
   <div>{{ html }}</div>
   <form @submit.prevent="add">
@@ -18,8 +19,9 @@
 </template>
 
 <script setup lang="ts">
+import NewFile from "./components/NewFile.vue";
 import ToDoList from "./components/ToDoList.vue";
-import HelloWorld from './components/HelloWorld.vue';
+// import HelloWorld from './components/HelloWorld.vue';
 import { ref } from "vue";
 const str = ref("learn vue");
 const html = ` <h1>Html code</h1>`;
@@ -41,9 +43,11 @@ const check = (id: number, check: number) => {
 [data-check="1"] {
   text-decoration: line-through;
 }
+
 [data-check="2"] {
   background-color: red;
 }
+
 h1 {
   user-select: none;
 }
