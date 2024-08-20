@@ -1,7 +1,12 @@
 <template>
+  <div>
+   <a class="vueV3" href="https://v3.ru.vuejs.org/ru/guide/introduction.html" ><img src="/vue.svg"> <span style="color: rgb(38, 130, 19); font-size: 20px;">VUE</span></a>
+  </div>
   <button @click="count++">
-    Нажимай раз в год <span class="count">{{ count }}</span>
+    Нажимай раз в год <span class="count">{{ count }}</span> 
   </button>
+  <button class="hom" @click="count--">Ой</button>
+  <br>
   <button @click="count = 0">Сброс</button>
   <br />
   <br />
@@ -35,6 +40,7 @@
       <button @click="">/</button>
     </div>
   </div>
+  <slot></slot>
 </template>
 
 <script setup lang="ts">
@@ -42,7 +48,6 @@ import { ref } from "vue";
 // const calc = ref();
 const calcStr = ref("");
 const count = ref(0);
-
 
 // const calEvent=(e)
 // onBeforeMount(() => {
@@ -73,5 +78,19 @@ const count = ref(0);
 }
 body {
   background-color: antiquewhite;
+}
+.hom {
+  padding: 46px 15px 18px 15px;
+  border-radius: 5px;
+  margin: 8px;
+}
+button{
+  background-color: aqua;
+}
+.vueV3{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
 }
 </style>
