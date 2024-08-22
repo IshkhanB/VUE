@@ -1,6 +1,6 @@
 <template>
   <div>
-   <a class="vueV3" href="https://v3.ru.vuejs.org/ru/guide/introduction.html" ><img src="/vue.svg"> <span style="color: rgb(38, 130, 19); font-size: 20px;">VUE</span></a>
+   <a class="vueV3" target="_blank" href="https://v3.ru.vuejs.org/ru/guide/introduction.html" ><img src="/vue.svg"> <span style="color: color: #2c3e50;; font-size: 1.3rem;;">Vue.js</span></a>
   </div>
   <button @click="count++">
     Нажимай раз в год <span class="count">{{ count }}</span> 
