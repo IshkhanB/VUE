@@ -1,9 +1,9 @@
 <template>
   <h1 @click="str += '!'">{{ str }}</h1>
   <p v-bind="ref">hekk</p>
-  <TrekBar/>
+  <TrekBar />
   <NewFile />
-  <TowFile/>
+  <TowFile />
   <ToDoList />
   <!-- <HelloWorld msg="dsfsdfsdf"></HelloWorld> -->
   <div v-html="html"></div>
