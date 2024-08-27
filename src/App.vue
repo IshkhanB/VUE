@@ -1,6 +1,7 @@
 <template>
   <h1 @click="str += '!'">{{ str }}</h1>
   <p v-bind="ref">hekk</p>
+  <Calc/>
   <TrekBar />
   <NewFile />
   <TowFile />
@@ -21,6 +22,8 @@
 </template>
 
 <script setup lang="ts">
+
+import Calc from "./components/Calc.vue";
 import TrekBar from "./components/TrekBar.vue";
 import NewFile from "./components/NewFile.vue";
 import ToDoList from "./components/ToDoList.vue";
