@@ -1,11 +1,11 @@
 <template>
   <div>
-   <a class="vueV3" target="_blank" href="https://v3.ru.vuejs.org/ru/guide/introduction.html" ><img src="/vue.svg"> <span style="color: color: #2c3e50;; font-size: 1.3rem;;">Vue.js</span></a>
+   <a class="vueV3" target="_blank" href="https://v3.ru.vuejs.org/ru/guide/introduction.html" ><img src="/vue.svg"> <span style="color: #2c3e50; font-size: 1.3rem;;">Vue.js</span></a>
   </div>
   <button @click="count++">
     Нажимай раз в год <span class="count">{{ count }}</span> 
   </button>
-  <button class="hom" @click="count--">Ой</button>
+  <button class="hom" v-if="count>=0" @click="count--">Ой 🤦‍♂️</button>
   <br>
   <button @click="count = 0">Сброс</button>
   <br />
@@ -15,10 +15,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
+
 
 const count = ref(0);
 
+watch(()=>count.value, (val)=>{
+  if (val<0) count.value=0
+})
 // const calEvent=(e)
 // onBeforeMount(() => {
 //   calc.value.addEvevtListennr("click", (e: MouseEvent) => {
@@ -36,8 +40,9 @@ body {
   background-color: antiquewhite;
 }
 .hom {
-  padding: 46px 15px 18px 15px;
-  border-radius: 5px;
+  padding: 16px 15px 18px 15px;
+  border-radius: 50px;
+  background-color: red;
   margin: 8px;
 }
 button{

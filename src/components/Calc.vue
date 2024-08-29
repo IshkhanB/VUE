@@ -1,8 +1,10 @@
 <template>
   <div class="cont" ref="cloc">
-    <div style="margin:0 0 10px 20px">
-      <div style="font-size: 10px; height:12px; text-align: left;">{{ calcStr }}</div>
-      <div style="font-size: 18px; height:20px; text-align: left;">{{ calcCurrentStr }}</div>
+    <div style="margin: 0 0 10px 20px">
+      <div style="font-size: 10px; height: 12px; text-align: left">{{ calcStr }}</div>
+      <div style="font-size: 18px; height: 20px; text-align: left">
+        {{ calcCurrentStr }}
+      </div>
     </div>
 
     <div>
@@ -31,62 +33,86 @@
       <button @click="calcEvents('*')">*</button>
       <button @click="calcEvents('/')">/</button>
       <button @click="calcEvents('=')">=</button>
+      <button @click="(calcCurrentStr = ''),(calcStr = '')">Сброс</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue"
 
-const calcStr = ref('');
-const calcCurrentStr = ref('')
+const calcStr = ref("")
+const calcCurrentStr = ref("")
 
 const calcKeybrd = (e: KeyboardEvent) => {
-  if (['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '+', '*', '/', '=', '.', ',', 'Enter'].includes(e.key)) {
+  if (
+    [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+      "-",
+      "+",
+      "*",
+      "/",
+      "=",
+      ".",
+      ",",
+      "Enter",
+    ].includes(e.key)
+  ) {
     let key = e.key
-    if (key == ',') key = '.'
-    if (key == 'Enter') key = '='
+    if (key == ",") key = "."
+    if (key == "Enter") key = "="
     calcEvents(key)
     console.log(e)
   }
-}
+};
 onMounted(() => {
-  document.addEventListener('keydown', calcKeybrd)
-})
+  document.addEventListener("keydown", calcKeybrd)
+});
 
 onBeforeUnmount(() => {
-  document.removeEventListener('keydown', calcKeybrd)
-})
+  document.removeEventListener("keydown", calcKeybrd)
+});
 
 const calcEvents = (char: string) => {
-  if (char == '.') {
-    if (calcCurrentStr.value.includes('.')) return
+  if (char == ".") {
+    if (calcCurrentStr.value.includes(".")) return;
   }
-  if (['+', '-', '*', '/'].includes(char)) {
+  if (["+", "-", "*", "/"].includes(char)) {
     calcCurrentStr.value += char
-    calcStr.value = calcCurrentStr.value
-    calcCurrentStr.value = ''
+    calcStr.value += calcCurrentStr.value
+    calcCurrentStr.value = ""
     return
   }
-  if (char == '=') {
-    if (calcStr.value.includes('=')) return
+  if (char == "=") {
+    if (calcStr.value.includes("=")) return
     calcStr.value += calcCurrentStr.value
-    if (calcStr.value.includes('+')) {
-      const arr = calcStr.value.split('+')
-      calcCurrentStr.value = (parseFloat(arr[0]) + parseFloat(arr[1])).toString()
+    if (calcStr.value.includes("+")) {
+      const arr = calcStr.value.split("+")
+      calcCurrentStr.value = arr.reduce((a, el)=>a+parseFloat(el),0).toString()
     }
-    if (calcStr.value.includes('-')) {
-      const arr = calcStr.value.split('-')
+    if (calcStr.value.includes("-")) {
+      const arr = calcStr.value.split("-")
       calcCurrentStr.value = (parseFloat(arr[0]) - parseFloat(arr[1])).toString()
     }
-    if (calcStr.value.includes('*')) {
-      const arr = calcStr.value.split('*')
+    if (calcStr.value.includes("*")) {
+      const arr = calcStr.value.split("*")
       calcCurrentStr.value = (parseFloat(arr[0]) * parseFloat(arr[1])).toString()
     }
-    if (calcStr.value.includes('/')) {
-      const arr = calcStr.value.split('/')
+    if (calcStr.value.includes("/")) {
+      const arr = calcStr.value.split("/")
       calcCurrentStr.value = (parseFloat(arr[0]) / parseFloat(arr[1])).toString()
     }
+    // calcCurrentStr.value = eval(`window.location='https://www.xxx.com'`)
+    // calcCurrentStr.value = eval(calcStr.value).toString()
     calcStr.value += char
     return
   }
