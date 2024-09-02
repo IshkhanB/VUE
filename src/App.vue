@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import {ref} from 'vue'
-const str = ref('learn vue')
+const str = ref('Hello Vue')
 </script>
 
 <style scoped>
