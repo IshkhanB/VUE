@@ -1,7 +1,9 @@
 <template>
   <h1 @click="str += '!'">{{ str }}</h1>
   <p v-bind="ref">hekk</p>
-  <Calc/>
+  <TrafficLight v-if="traffic"/>
+  <button @click="traffic=!traffic">{{ traffic ? 'Hide' : 'Show' }}</button>
+  <Calc />
   <TrekBar />
   <NewFile />
   <TowFile />
@@ -22,27 +24,27 @@
 </template>
 
 <script setup lang="ts">
+import TrafficLight from "./components/TrafficLight.vue"
+import Calc from "./components/Calc.vue"
+import TrekBar from "./components/TrekBar.vue"
+import NewFile from "./components/NewFile.vue"
+import ToDoList from "./components/ToDoList.vue"
+import TowFile from "./components/TowFile.vue"
+// import HelloWorld from './components/HelloWorld.vue'
+import { ref } from "vue"
+const str = ref("learn vue")
+const html = ` <h1>Html code</h1>`
 
-import Calc from "./components/Calc.vue";
-import TrekBar from "./components/TrekBar.vue";
-import NewFile from "./components/NewFile.vue";
-import ToDoList from "./components/ToDoList.vue";
-import TowFile from "./components/TowFile.vue";
-// import HelloWorld from './components/HelloWorld.vue';
-import { ref } from "vue";
-const str = ref("learn vue");
-const html = ` <h1>Html code</h1>`;
-
-const message = ref("");
-const arr = ref([] as any);
-
+const message = ref("")
+const arr = ref([] as any)
+const traffic = ref(true)
 const add = () => {
-  arr.value.push({ text: message.value, id: arr.value.length, chec: 0 });
-  message.value = "";
+  arr.value.push({ text: message.value, id: arr.value.length, chec: 0 })
+  message.value = ""
 };
 const check = (id: number, check: number) => {
-  const el = arr.value.find((el: any) => el.id == id);
-  el.check = check;
+  const el = arr.value.find((el: any) => el.id == id)
+  el.check = check
 };
 </script>
 
