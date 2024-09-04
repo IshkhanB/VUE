@@ -2,6 +2,7 @@
   {{ num }}
   {{ timer }}
   {{ num }}
+  {{ Date() }}
   <div class="divKrug">
     <div :style="num == 1 || num == 2 ? 'background-color: red;' : ''"></div>
     <div :style="num == 0 || num == 2 ? 'background-color: orange;' : ''"></div>
@@ -22,20 +23,20 @@ const num = ref(0);
 let timer: number
 
 onMounted(()=>{
-  let time = 1000
+  let time = 0
   timer = setTimeout(function changeColor() {
-    if (num.value == 0) {
+    if (num.value == 0) { //желтый
       num.value = 1
-      time = 1000
-    } else if (num.value == 1) {
-      num.value = 2;
-      time = 1000
-    } else if (num.value == 2) {
-      num.value = 3;
-      time = 1000
-    } else if (num.value == 3) {
-      num.value = 0;
-      time = 3000
+      time = 2000
+    } else if (num.value == 1) {//красный
+      num.value = 2 
+      time = 5000 
+    } else if (num.value == 2) {//красножелтый
+      num.value = 3 
+      time = 2000
+    } else if (num.value == 3) {  //зеленый
+      num.value = 0 
+      time = 11000
     }
     timer = setTimeout(changeColor, time)
   },time)
@@ -54,13 +55,14 @@ onBeforeUnmount(()=>{
   align-items: center;
   width: 70px;
   height: 200px;
-  background-color: whitesmoke;
+  background-color: rgb(139, 135, 135);
+  border-radius: 10px;
 }
 .divKrug div {
   margin: 3px;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  background-color: rgb(89, 89, 89);
+  background-color: rgb(75, 74, 74);
 }
 </style>

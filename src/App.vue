@@ -8,6 +8,7 @@
   <NewFile />
   <TowFile />
   <ToDoList />
+  <TimeNow/>
   <!-- <HelloWorld msg="dsfsdfsdf"></HelloWorld> -->
   <div v-html="html"></div>
   <div>{{ html }}</div>
@@ -30,6 +31,7 @@ import TrekBar from "./components/TrekBar.vue"
 import NewFile from "./components/NewFile.vue"
 import ToDoList from "./components/ToDoList.vue"
 import TowFile from "./components/TowFile.vue"
+import TimeNow from "./components/TimeNow.vue"
 // import HelloWorld from './components/HelloWorld.vue'
 import { ref } from "vue"
 const str = ref("learn vue")
