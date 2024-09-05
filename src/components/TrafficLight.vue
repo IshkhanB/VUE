@@ -2,11 +2,15 @@
   {{ num }}
   {{ timer }}
   {{ num }}
-  {{ Date() }}
+  {{ date.toLocaleTimeString()}}
+  <div>
+  <Transition name="svePerex">
   <div class="divKrug">
     <div :style="num == 1 || num == 2 ? 'background-color: red;' : ''"></div>
     <div :style="num == 0 || num == 2 ? 'background-color: orange;' : ''"></div>
     <div :style="num == 3 ? 'background-color: green;' : ''"></div>
+  </div>
+  </Transition>
   </div>
 </template>
 
@@ -19,30 +23,34 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 //   })
 // }
 
+const date = ref(new Date())
 const num = ref(0);
 let timer: number
+let timerDate: number
 
 onMounted(()=>{
+  timerDate = setInterval(()=>{date.value=new Date()},1000)
   let time = 0
   timer = setTimeout(function changeColor() {
-    if (num.value == 0) { //желтый
+    if (num.value == 0) { //красный
       num.value = 1
-      time = 2000
-    } else if (num.value == 1) {//красный
+      time = 6000
+    } else if (num.value == 1) {//красножелтый
       num.value = 2 
-      time = 5000 
-    } else if (num.value == 2) {//красножелтый
+      time = 4000 
+    } else if (num.value == 2) {//зеленый
       num.value = 3 
-      time = 2000
-    } else if (num.value == 3) {  //зеленый
+      time = 10000
+    } else if (num.value == 3) {  //желтый
       num.value = 0 
-      time = 11000
+      time = 4000
     }
     timer = setTimeout(changeColor, time)
   },time)
 })
 onBeforeUnmount(()=>{
   clearTimeout(timer)
+  clearInterval(timerDate)
 })
 
 </script>
@@ -57,6 +65,15 @@ onBeforeUnmount(()=>{
   height: 200px;
   background-color: rgb(139, 135, 135);
   border-radius: 10px;
+}
+.svePerex-enter-active,
+.svePerex-leave-active {
+  transition: opacity 1s ease;
+}
+
+.svePerex-enter-from,
+.svePerex-leave-to {
+  opacity: 0;
 }
 .divKrug div {
   margin: 3px;

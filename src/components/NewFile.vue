@@ -1,6 +1,14 @@
 <template>
+  <div class="homeHed">
   <div>
-   <a class="vueV3" target="_blank" href="https://v3.ru.vuejs.org/ru/guide/introduction.html" ><img src="/vue.svg"> <span style="color: #2c3e50; font-size: 1.3rem;;">Vue.js</span></a>
+   <a class="vueV3" target="_blank" href="https://v3.ru.vuejs.org/ru/guide/introduction.html" ><img src="/vue.svg"> <span style="color: #2c3e50; font-size: 1.3rem;;">Vue.js(v3.ru)</span></a>
+  </div>
+  <div>
+   <a class="vueJs" target="_blank" href="https://vuejs-doc-ru.vercel.app/guide/introduction.html" ><img src="/vue.svg"> <span style="color: #2c3e50; font-size: 1.3rem;;">Vue.js(vuejs-doc-ru)</span></a>
+   
+  </div>
+  <br>
+  
   </div>
   <button @click="count++">
     Нажимай раз в год <span class="count">{{ count }}</span> 
@@ -36,6 +44,7 @@ watch(()=>count.value, (val)=>{
 
 <style scoped>
 
+
 body {
   background-color: antiquewhite;
 }
@@ -52,6 +61,11 @@ button{
   position: absolute;
   top: 10px;
   left: 10px;
-
 }
+.vueJs{
+  position: absolute;
+  top: 60px;
+  left: 10px;
+}
+
 </style>
