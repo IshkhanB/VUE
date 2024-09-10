@@ -4,13 +4,13 @@
   {{ num }}
   {{ date.toLocaleTimeString()}}
   <div>
-  <Transition name="svePerex">
-  <div class="divKrug">
-    <div :style="num == 1 || num == 2 ? 'background-color: red;' : ''"></div>
-    <div :style="num == 0 || num == 2 ? 'background-color: orange;' : ''"></div>
-    <div :style="num == 3 ? 'background-color: green;' : ''"></div>
-  </div>
-  </Transition>
+    <Transition name="svePerex">
+      <div class="divKrug">
+        <div :style="num == 1 || num == 2 ? 'background-color: red;' : ''"></div>
+        <div :style="num == 0 || num == 2 ? 'background-color: orange;' : ''"></div>
+        <div :style="num == 3 ? 'background-color: green;' : ''"></div>
+      </div>
+    </Transition>
   </div>
 </template>
 

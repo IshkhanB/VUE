@@ -9,6 +9,7 @@
   <TowFile />
   <ToDoList />
   <TimeNow/>
+  <ImportantLinks/>
   <!-- <HelloWorld msg="dsfsdfsdf"></HelloWorld> -->
   <div v-html="html"></div>
   <div>{{ html }}</div>
@@ -25,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import ImportantLinks from "./components/ImportantLinks.vue"
 import TrafficLight from "./components/TrafficLight.vue"
 import Calc from "./components/Calc.vue"
 import TrekBar from "./components/TrekBar.vue"
