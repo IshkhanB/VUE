@@ -6,13 +6,21 @@
     <div></div>
   </div>
 </div> -->
-<div>{{ chas.toUTCString() }}</div>
+<div class="timeSee">{{ chas.toLocaleString()}}</div>
 </template>
 
 <script setup lang="ts"> 
-import { ref,onMounted,onBeforeMount } from 'vue';
+import { ref,onMounted,onBeforeMount } from 'vue'
 
-let chas = (new Date())
+const chas = ref(new Date())
+let time:number
+
+onMounted(()=>{
+  time=setInterval(()=>{chas.value =new Date()},1000)
+})
+onBeforeMount(()=>{
+  clearInterval(time)
+})
 </script>
 
 <style scoped>
@@ -26,5 +34,11 @@ let chas = (new Date())
   height: 75px;
   background-color: beige;
 } */
+ .timeSee{
+  margin: 20px;
+  padding: 10px;
+  font-size: 50px;
+  background-color: rgba(253, 246, 246, 0.6);
+ }
 
 </style>
