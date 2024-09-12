@@ -25,7 +25,7 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const date = ref(new Date())
 const num = ref(0);
-let timer: number
+let timer:number
 let timerDate: number
 
 onMounted(()=>{
