@@ -36,8 +36,11 @@ import TowFile from "#root/components/TowFile.vue"
 import TimeNow from "#root/components/TimeNow.vue"
 // import HelloWorld from '#root/components/HelloWorld.vue'
 import { ref } from "vue"
+import {v4} from 'uuid'
 const str = ref("learn vue")
 const html = ` <h1>Html code</h1>`
+
+const uuid = v4()
 
 const message = ref("")
 const arr = ref([] as any)
