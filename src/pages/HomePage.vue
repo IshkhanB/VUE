@@ -1,9 +1,9 @@
 <template> 
 
   <h1 @click="str += '!'">{{ str }}</h1>
-  <p v-bind="ref">hekk</p>
-  <TrafficLight v-if="traffic"/>
-  <button @click="traffic=!traffic">{{ traffic ? 'Hide' : 'Show' }}</button>
+  <!-- <p v-bind="ref">hekk</p> -->
+  
+  <!-- <button @click="traffic=!traffic">{{ traffic ? 'Hide' : 'Show' }}</button> -->
   <Calc />
   <TrekBar />
   <NewFile />
@@ -28,7 +28,6 @@
 
 <script setup lang="ts">
 import ImportantLinks from "#root/components/ImportantLinks.vue"
-import TrafficLight from "#root/components/TrafficLight.vue"
 import Calc from "#root/components/CalcComp.vue"
 import TrekBar from "#root/components/TrekBar.vue"
 import NewFile from "#root/components/NewFile.vue"
@@ -42,7 +41,7 @@ const html = ` <h1>Html code</h1>`
 
 const message = ref("")
 const arr = ref([] as any)
-const traffic = ref(true)
+// const traffic = ref(true)
 const add = () => {
   arr.value.push({ text: message.value, id: arr.value.length, chec: 0 })
   message.value = ""

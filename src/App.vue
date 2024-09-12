@@ -4,6 +4,8 @@
     <!-- {{  }} -->
     <br>
     <RouterLink to="/about">About</RouterLink>
+    <br>
+    <RouterLink to="/my">My</RouterLink>
   </HeaderComp>
   
   <RouterView></RouterView>
