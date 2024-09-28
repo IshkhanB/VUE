@@ -25,8 +25,8 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const date = ref(new Date())
 const num = ref(0);
-let timer:number
-let timerDate: number
+let timer:any
+let timerDate:any
 
 onMounted(()=>{
   timerDate = setInterval(()=>{date.value=new Date()},1000)
@@ -45,6 +45,8 @@ onMounted(()=>{
       num.value = 0 
       time = 4000
     }
+    console.log(time)
+    console.log(timerDate)
     timer = setTimeout(changeColor, time)
   },time)
 })
