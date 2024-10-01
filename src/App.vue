@@ -1,16 +1,14 @@
 <template>
   <HeaderComp>
     <RouterLink to="/">На главную </RouterLink>
-    <!-- {{  }} -->
     <br>
     <RouterLink to="/about">About</RouterLink>
     <br>
     <RouterLink to="/my">My</RouterLink>
   </HeaderComp>
-  
   <RouterView></RouterView>
 
-  <footer style="background:#dedede; height:30px">
+  <footer style="background: #dedede; height:30px">
     logo
   </footer>
 

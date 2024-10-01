@@ -13,7 +13,7 @@
 import { ref,onMounted,onBeforeMount } from 'vue'
 
 const chas = ref(new Date())
-let time:number
+let time: any 
 
 onMounted(()=>{
   time=setInterval(()=>{chas.value =new Date()},1000)

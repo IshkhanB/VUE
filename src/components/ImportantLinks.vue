@@ -3,9 +3,16 @@
   <span>
 <a href="https://doka.guide/js/intersection-observer/" target="_blank"> intersection-observer </a>
   </span>
-  <div class="link">
-<a href="https://doka.guide/js"> <span >doka.guide</span> </a>
-  </div>
+  <span>
+<a href="https://doka.guide/js" target="_blank"> <span >doka.guide</span> </a>
+  </span>
+  <span>
+  <a href="https://ru.vuejs.org/" target="_blank">Обучалка ru.vuejs</a>
+  </span>
+  <span>
+  <a href="https://pinia-ru.netlify.app/" target="_blank">pinia</a>
+  </span>
+  
   </div>
 </template>
 
