@@ -1,6 +1,7 @@
 <template>
-  <header> </header>
-  <div> {{ console.log() }}</div>
+  <header>
+    <div> {{ 123456 }}</div>
+  </header>
   <footer></footer>
 </template>
 
@@ -10,9 +11,9 @@
 </script>
 
 <style scoped>
-header{
-  min-width: 100vw - 2em;
+div{
+  min-width: 100%;
   height: 100px;
-  background-color:gray ;
+  background-color:rgb(101, 76, 76) ;
 }
 </style>

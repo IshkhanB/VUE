@@ -11,12 +11,14 @@
   "dependencies": {
     "@types/node": "^22.5.4",
     "gsap": "^3.12.5",
+    "md5": "^2.3.0",
     "pinia": "^2.2.4",
     "uuid": "^10.0.0",
     "vue": "^3.4.35",
     "vue-router": "^4.4.4"
   },
   "devDependencies": {
+    "@types/md5": "^2.3.5",
     "@types/uuid": "^10.0.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "typescript": "^5.5.3",
